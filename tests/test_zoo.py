@@ -48,6 +48,20 @@ class TestZoo(TestCase):
 
         self.assertEqual(result, 1, message)
 
+    def test_animal_remove(self):
+
+        zookeeper_1: ZooKeeper = ZooKeeper(name="Gianni", surname="Rossi", id=1)
+        fence_1: Fence = Fence(area=100, temperature=25.0, habitat="Sea")    
+        animal_1: Animal = Animal(name="Pluto", species="Canide", age=5, height=5.0, width=1.0, preferred_habitat="Savana")
+        zookeeper_1.add_animal(animal_1, fence_1)
+        result: int = len(fence_1.animals)
+        message: str = f"Error: the function add_animal shoud not add self.animal_1 into self_fence_1"
+
+        self.assertEqual(result, 1, message)
+
+
+
+
 
 
 
